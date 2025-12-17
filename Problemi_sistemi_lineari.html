@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Matematica: 5 Esercizi Completi</title>
+    
+    <!-- Caricamento MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f3f4f6; }
+        .mjx-chtml { font-size: 110% !important; }
+        .step-box { border-left: 4px solid #3b82f6; background-color: #eff6ff; padding: 1rem; margin-bottom: 1rem; }
+        .error-box { border-left: 4px solid #ef4444; background-color: #fef2f2; padding: 1rem; margin-top: 1rem; }
+        .reasoning-box { border-left: 4px solid #10b981; background-color: #ecfdf5; padding: 1rem; margin-bottom: 1rem; }
+        .hidden { display: none; }
+        .fade-in { animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
+        
+        <header class="bg-indigo-700 text-white p-6 text-center">
+            <h1 class="text-3xl font-bold mb-2">Scheda Completa: 5 Problemi sui Sistemi</h1>
+            <p class="text-indigo-100 text-lg">Risoluzione guidata passo dopo passo</p>
+        </header>
+
+        <div class="p-6 border-b border-gray-200 bg-gray-50">
+            <h2 class="text-lg font-semibold text-gray-800">Guida ai metodi:</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2 text-sm">
+                <div class="bg-blue-100 p-2 rounded text-center"><strong>Sostituzione</strong><br>Per equazioni semplici</div>
+                <div class="bg-green-100 p-2 rounded text-center"><strong>Confronto</strong><br>Se hai due variabili isolate</div>
+                <div class="bg-yellow-100 p-2 rounded text-center"><strong>Riduzione</strong><br>Per coefficienti opposti</div>
+                <div class="bg-purple-100 p-2 rounded text-center"><strong>Cramer</strong><br>Metodo con determinanti</div>
+            </div>
+        </div>
+
+        <!-- ESERCIZIO 1: ETÀ (Sostituzione) -->
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <h3 class="text-xl font-bold text-indigo-800">1. Problema delle Età</h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Metodo: Sostituzione</span>
+            </div>
+            <p class="mt-4 text-lg text-gray-800 italic border-l-4 border-gray-300 pl-4">
+                "Un padre ha 30 anni più del figlio. Fra 5 anni l'età del padre sarà il triplo di quella del figlio. Calcola le età attuali."
+            </p>
+            <button onclick="toggleSolution('sol1')" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">Mostra Soluzione</button>
+
+            <div id="sol1" class="hidden mt-6 fade-in">
+                <div class="reasoning-box">
+                    <p><strong>Impostazione:</strong><br> \( x \) = padre, \( y \) = figlio.<br>
+                    Oggi: \( x = y + 30 \)<br>
+                    Futuro (+5 anni): \( x+5 = 3(y+5) \)</p>
+                </div>
+                <div class="mb-4">
+                    $$ \begin{cases} x = y + 30 \\ x + 5 = 3y + 15 \end{cases} $$
+                </div>
+                <div class="step-box">
+                    <p>Sostituendo la prima nella seconda: \( (y + 30) + 5 = 3y + 15 \)<br>
+                    \( y + 35 = 3y + 15 \implies 20 = 2y \implies y = 10 \)<br>
+                    Quindi \( x = 10 + 30 = 40 \).</p>
+                </div>
+                <p class="font-bold">Soluzione: Padre 40 anni, Figlio 10 anni.</p>
+            </div>
+        </div>
+
+        <!-- ESERCIZIO 2: GEOMETRIA (Sostituzione) -->
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <h3 class="text-xl font-bold text-indigo-800">2. Geometria (Rettangolo)</h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Metodo: Sostituzione</span>
+            </div>
+            <p class="mt-4 text-lg text-gray-800 italic border-l-4 border-gray-300 pl-4">
+                "In un rettangolo l'altezza è i \( \frac{3}{4} \) della base. Sapendo che il perimetro è 84 cm, determina l'area."
+            </p>
+            <button onclick="toggleSolution('sol2')" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">Mostra Soluzione</button>
+
+            <div id="sol2" class="hidden mt-6 fade-in">
+                <div class="reasoning-box">
+                    <p><strong>Impostazione:</strong><br>
+                    \( h = \frac{3}{4}b \)<br>
+                    \( 2b + 2h = 84 \implies b + h = 42 \)</p>
+                </div>
+                <div class="step-box">
+                    <p>Sostituisco h: \( b + \frac{3}{4}b = 42 \)<br>
+                    \( \frac{7}{4}b = 42 \implies b = 42 \cdot \frac{4}{7} = 24 \)<br>
+                    \( h = \frac{3}{4} \cdot 24 = 18 \)<br>
+                    Area = \( 24 \cdot 18 = 432 \text{ cm}^2 \)</p>
+                </div>
+                <p class="font-bold">Soluzione: Area 432 cm².</p>
+            </div>
+        </div>
+
+        <!-- ESERCIZIO 3: ANIMALI (Riduzione) -->
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <h3 class="text-xl font-bold text-indigo-800">3. Animali nella fattoria</h3>
+                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Metodo: Riduzione</span>
+            </div>
+            <p class="mt-4 text-lg text-gray-800 italic border-l-4 border-gray-300 pl-4">
+                "Teste totali 40, Zampe totali 110. Quanti polli (2 zampe) e quanti conigli (4 zampe)?"
+            </p>
+            <button onclick="toggleSolution('sol3')" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">Mostra Soluzione</button>
+
+            <div id="sol3" class="hidden mt-6 fade-in">
+                <div class="mb-4">
+                    $$ \begin{cases} x + y = 40 \\ 2x + 4y = 110 \rightarrow x + 2y = 55 \end{cases} $$
+                </div>
+                <div class="step-box">
+                    <p>Sottrazione membro a membro (seconda - prima):<br>
+                    \( (x-x) + (2y-y) = 55-40 \)<br>
+                    \( y = 15 \)<br>
+                    \( x = 40 - 15 = 25 \)</p>
+                </div>
+                <p class="font-bold">Soluzione: 25 Polli, 15 Conigli.</p>
+            </div>
+        </div>
+
+        <!-- ESERCIZIO 4: RELAZIONE NUMERICA (Confronto) -->
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <h3 class="text-xl font-bold text-indigo-800">4. Relazione tra Numeri</h3>
+                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Metodo: Confronto</span>
+            </div>
+            <p class="mt-4 text-lg text-gray-800 italic border-l-4 border-gray-300 pl-4">
+                "Trova due numeri sapendo che il primo è uguale ai \( \frac{2}{3} \) del secondo aumentati di 4, e che lo stesso primo numero è anche uguale alla metà del secondo aumentata di 7."
+            </p>
+            <button onclick="toggleSolution('sol4')" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">Mostra Soluzione</button>
+
+            <div id="sol4" class="hidden mt-6 fade-in">
+                <div class="reasoning-box">
+                    <p><strong>Analisi:</strong> Qui abbiamo la stessa incognita (\( x \)) isolata in due modi diversi rispetto a \( y \). Il metodo del confronto è ideale.</p>
+                </div>
+                <div class="mb-4">
+                    $$ \begin{cases} x = \frac{2}{3}y + 4 \\ x = \frac{1}{2}y + 7 \end{cases} $$
+                </div>
+                <div class="step-box">
+                    <p><strong>Uguagliamo le parti a destra:</strong></p>
+                    $$ \frac{2}{3}y + 4 = \frac{1}{2}y + 7 $$
+                    <p>Portiamo le \( y \) a sinistra e i numeri a destra:</p>
+                    $$ \frac{2}{3}y - \frac{1}{2}y = 7 - 4 $$
+                    <p>Minimo comune multiplo (6):</p>
+                    $$ \frac{4y - 3y}{6} = 3 \implies \frac{y}{6} = 3 \implies y = 18 $$
+                    <p>Troviamo \( x \) sostituendo in una delle due:</p>
+                    $$ x = \frac{1}{2}(18) + 7 = 9 + 7 = 16 $$
+                </div>
+                <p class="font-bold">Soluzione: I numeri sono 16 e 18.</p>
+                <div class="error-box">
+                    <p><strong>Nota didattica:</strong> Il confronto ci evita di gestire sistemi disordinati quando le variabili sono già esplicitate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESERCIZIO 5: ECONOMIA (Cramer) -->
+        <div class="p-6">
+            <div class="flex flex-wrap justify-between items-center gap-2">
+                <h3 class="text-xl font-bold text-indigo-800">5. Biglietti del Teatro</h3>
+                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Metodo: Cramer</span>
+            </div>
+            <p class="mt-4 text-lg text-gray-800 italic border-l-4 border-gray-300 pl-4">
+                "Per uno spettacolo, una famiglia composta da 3 adulti e 2 bambini paga 38 €. Un'altra famiglia, con 2 adulti e 5 bambini, paga 40 €. Quanto costa il biglietto intero (adulto) e quanto il ridotto (bambino)?"
+            </p>
+            <button onclick="toggleSolution('sol5')" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">Mostra Soluzione</button>
+
+            <div id="sol5" class="hidden mt-6 fade-in">
+                <div class="reasoning-box">
+                    <p><strong>Impostazione:</strong><br>
+                    \( x = \) costo adulto, \( y = \) costo bambino.<br>
+                    Sistema in forma normale (standard):</p>
+                </div>
+                <div class="mb-4">
+                    $$ \begin{cases} 3x + 2y = 38 \\ 2x + 5y = 40 \end{cases} $$
+                </div>
+                <div class="step-box">
+                    <p><strong>Calcolo dei Determinanti:</strong></p>
+                    $$ \Delta = \begin{vmatrix} 3 & 2 \\ 2 & 5 \end{vmatrix} = (3 \cdot 5) - (2 \cdot 2) = 15 - 4 = 11 $$
+                    <br>
+                    $$ \Delta_x = \begin{vmatrix} 38 & 2 \\ 40 & 5 \end{vmatrix} = (38 \cdot 5) - (2 \cdot 40) = 190 - 80 = 110 $$
+                    <br>
+                    $$ \Delta_y = \begin{vmatrix} 3 & 38 \\ 2 & 40 \end{vmatrix} = (3 \cdot 40) - (38 \cdot 2) = 120 - 76 = 44 $$
+                    
+                    <p><strong>Soluzioni:</strong></p>
+                    $$ x = \frac{\Delta_x}{\Delta} = \frac{110}{11} = 10 \quad ; \quad y = \frac{\Delta_y}{\Delta} = \frac{44}{11} = 4 $$
+                </div>
+                <p class="font-bold">Soluzione: Adulto 10 €, Bambino 4 €.</p>
+                <div class="error-box">
+                    <p><strong>Vantaggio di Cramer:</strong> È utile quando i numeri sono "brutti" o non si semplificano facilmente con la riduzione, in quanto è un processo puramente meccanico.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-gray-800 text-white p-6 text-center mt-4 rounded-b-xl">
+            <p class="text-gray-400 text-sm">Tutor AI Matematica</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function toggleSolution(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
